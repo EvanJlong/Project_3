@@ -10,7 +10,8 @@ export default class Dashboard extends Component {
   render() {
     return (
       <BrowserRouter>
-      
+      <div id="bidz">
+      </div>
         <div>
           {/* <TopNavigation /> */}
           <div>
@@ -23,5 +24,3 @@ export default class Dashboard extends Component {
     )
   }
 }
-
-

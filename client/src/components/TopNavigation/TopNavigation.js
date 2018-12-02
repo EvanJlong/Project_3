@@ -33,7 +33,7 @@ export default class TopNavigation extends React.Component {
         
       <Switch>
           <Nav>
-            <Link to={`/Dashboard`} >Dashboard</Link>
+            <Link to={`/Dashboard`} >DASHBOARD</Link>
           </Nav>
         <Route exact path='/Dashboard' component={Dashboard} />
         </Switch>
