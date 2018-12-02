@@ -17,8 +17,6 @@ export default class App extends Component {
         <div>
           <TopNavigation />
           <div>
-
-          
           <div id="loginz2">
           <Header /> <hr/>
           <Login />

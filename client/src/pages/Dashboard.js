@@ -1,29 +1,21 @@
 import React, { Component } from 'react';
-import MapContainer from './components/Map/MapRender'
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import MapContainer from '../components/Map/MapRender'
+import Footer from '../components/Footer/Footer';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
-import Home from './components/Home/Home'
-import TopNavigation from './components/TopNavigation/TopNavigation';
-import Login from './components/Login/Login'
-import './assets/css/home.css'
-import {Jumbotron, Button} from 'react-bootstrap'
 
-export default class App extends Component {
+// import TopNavigation from '../components/TopNavigation/TopNavigation';
+
+
+export default class Dashboard extends Component {
   render() {
     return (
       <BrowserRouter>
       
         <div>
-          <TopNavigation />
+          {/* <TopNavigation /> */}
           <div>
               <MapContainer />
-
-          
-          
            <hr/>
-          
-          
           <Footer />
           </div>
         </div>
