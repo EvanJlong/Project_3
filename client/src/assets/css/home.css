@@ -17,3 +17,12 @@ body {
     background-size:  cover;
     background-color: #999; 
   }
+  #loginz2{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    max-width:50%;
+    margin: auto;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 1);
+    height: 50%;
+}

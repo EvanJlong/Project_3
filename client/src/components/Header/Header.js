@@ -7,19 +7,17 @@ import logo from '../../assets/images/logo_2.png'
 
 const Header = () => (
   <div>
-<Jumbotron id="jumbotronz">
-  <h1><img id="logoz" src={logo} alt={"logo"}/> Bid & Build</h1>
-  <p>
+<div id="jumbotronz">
+  <h1 id="big"><img id="logoz" src={logo} alt={"logo"}/> Bid & Build</h1>
+  <h3>
     Start winning more construction bids in the DFW area today!  
-    </p>
-    <p>
-    Login or Sign-Up to get started.
-  </p>
-  <div id="loginz">
-  <Login />
-  </div>
+    </h3>
 
-</Jumbotron>
+  {/* <div id="loginz">
+  <Login />
+  </div> */}
+
+</div>
 </div>
 );
 

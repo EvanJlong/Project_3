@@ -245,7 +245,10 @@ class Login extends Component {
                     { message }
                   </div>
                 } */}
-                <h2 class="form-signin-heading">Sign-In</h2>
+                    <h4>
+    Sign-In
+  </h4><br/>
+                {/* <h2 class="form-signin-heading"><strong>Sign-In</strong></h2> */}
                 <label for="inputEmail" class="sr-only">Email address</label>
                 <input type="email" class="form-control" placeholder="Email"  value={signInEmail} onChange={this.onTextboxChangeSignInEmail} required/>
                 <label for="inputPassword" class="sr-only">Password</label>
@@ -260,9 +263,9 @@ class Login extends Component {
     }
     return (
       <div>
-        <p>Welcome,  {this.state.loggedInEmail}</p>
+        <h3>Welcome,  {this.state.loggedInEmail}</h3>
 
-        {/* <button class="btn btn-lg btn-primary btn-block" type="submit" onClick={this.logout} >Logout</button> */}
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onClick={this.logout} >Take me to my Dashboard</button>
       </div>
       
     );
