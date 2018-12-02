@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import 'whatwg-fetch';
 // import axios from 'axios';
 import Login from '../Login/Login'
+import '../../../../client/src/assets/css/home.css'
 
 
 import {
@@ -17,11 +18,8 @@ class Home extends Component {
       isLoading: false,
       token: '',
       signUpError: '',
-      signInError: '',
-      signInEmail: '',
-      loggedInEmail: '',
-      signInPassword: '',
       signUpEmail: '',
+      loggedInEmail: '',
       signUpPassword: '',
 
     };
@@ -33,13 +31,11 @@ class Home extends Component {
 
     this._modifyCounter = this._modifyCounter.bind(this);
 
-    this.onTextboxChangeSignInEmail = this.onTextboxChangeSignInEmail.bind(this);
-    this.onTextboxChangeSignInPassword = this.onTextboxChangeSignInPassword.bind(this);
     this.onTextboxChangeSignUpEmail = this.onTextboxChangeSignUpEmail.bind(this);
     this.onTextboxChangeSignUpPassword = this.onTextboxChangeSignUpPassword.bind(this);
 
     this.onSignUp = this.onSignUp.bind(this);
-    this.onSignIn = this.onSignIn.bind(this);
+ 
 
 
     this.logout = this.logout.bind(this);
@@ -109,47 +105,7 @@ class Home extends Component {
       });
   }
 
-  onSignIn() {
-    // Grab state
-    const {
-      signInEmail,
-      signInPassword,
-    } = this.state;
-    this.setState({
-      isLoading: true,
-    });
-    // Post request to backend
-    fetch('/api/account/signin', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: signInEmail,
-        password: signInPassword,
-      }),
-    }).then(res => res.json())
-      .then(json => {
-        console.log('json', json);
-        if (json.success) {
-          setInStorage('crane_it', { token: json.token });
-          this.setState({
-            signInError: json.message,
-            isLoading: false,
-            signInPassword: '',
-            loggedInEmail: signInEmail,
-            signInEmail: '',
-            token: json.token,
-          });
-        } else {
-          this.setState({
-            signInError: json.message,
-            isLoading: false,
-          });
-        }
-      });
-  }
-
+  
   logout() {
     this.setState({
       isLoading: true,
@@ -178,16 +134,7 @@ class Home extends Component {
       });
     }
   }
-  onTextboxChangeSignInEmail(event) {
-    this.setState({
-      signInEmail: event.target.value,
-    });
-  }
-  onTextboxChangeSignInPassword(event) {
-    this.setState({
-      signInPassword: event.target.value,
-    });
-  }
+
   onTextboxChangeSignUpEmail(event) {
     this.setState({
       signUpEmail: event.target.value,
@@ -269,9 +216,6 @@ class Home extends Component {
     const {
       isLoading,
       token,
-      signInError,
-      signInEmail,
-      signInPassword,
       signUpEmail,
       signUpPassword,
       signUpError,
@@ -283,29 +227,6 @@ class Home extends Component {
     if (!token) {
       return (
         <div>
-          <div>
-            {
-              (signInError) ? (
-                <p>{signInError}</p>
-              ) : (null)
-            }
-            <p>Sign In</p>
-            <input
-              type="email"
-              placeholder="Email"
-              value={signInEmail}
-              onChange={this.onTextboxChangeSignInEmail}
-            />
-            <br />
-            <input
-              type="password"
-              placeholder="Password"
-              value={signInPassword}
-              onChange={this.onTextboxChangeSignInPassword}
-            />
-            <br />
-            <button onClick={this.onSignIn}>Sign In</button>
-          </div>
           <br />
           <br />
           <div>

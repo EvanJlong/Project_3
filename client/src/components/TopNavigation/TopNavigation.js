@@ -1,22 +1,21 @@
 import React from 'react';
 import Login from '../Login/Login'
 
-class TopNavigation extends React.PureComponent {
+import '../TopNavigation/TopNavigation.css'
+import {Navbar, Nav, MenuItem, NavItem, NavDropdown } from 'react-bootstrap';
+
+
+
+export default class TopNavigation extends React.Component {
+    
     render() {
-        console.log(this.props)
-        return (
-            <ul >
-                <li >
-                <a href = '#' >Sign Up</a>
-                <a href = '#' >Sign In</a>
-                <a href = '#' >Dashboard</a>
-
-                </li>
-            </ul>
-
-
-        )
+        
+      return (
+        <Nav>
+            <NavItem eventKey={1} href="#">HOME</NavItem>
+            <NavItem eventKey={2} href="#">SIGN-UP</NavItem>
+            <NavItem eventKey={2} href="#">LOGIN</NavItem>
+        </Nav>
+      )
     }
-}
-
-export default TopNavigation;
+  }

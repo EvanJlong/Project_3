@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react'
+import './../Map/Map.css'
 
 const mapStyles = {
   width: '50%',
@@ -31,6 +32,7 @@ export class MapContainer extends Component {
 
   render() {
     return (
+      <div class="map">
       <Map
         google={this.props.google}
         zoom={14}
@@ -47,7 +49,7 @@ export class MapContainer extends Component {
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
         >
-          <div>
+          <div className="container-fluid">
           <input type="checkbox" value="first checkbox" id="cb1" /> <label for="cb1">Interested</label>
 
             <h3>{this.state.selectedPlace.title}</h3>
@@ -57,7 +59,7 @@ export class MapContainer extends Component {
           </div>
         </InfoWindow>
       </Map>
-
+      </div>
     );
   }
 }
