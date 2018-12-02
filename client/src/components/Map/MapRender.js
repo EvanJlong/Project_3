@@ -4,7 +4,9 @@ import './../Map/Map.css'
 
 const mapStyles = {
   width: '50%',
-  height: '50%'
+  height: '50%',
+  margin: 'auto',
+  
 }
 
 export class MapContainer extends Component {
@@ -32,7 +34,7 @@ export class MapContainer extends Component {
 
   render() {
     return (
-      <div id="map">
+      <div className="map">
       <Map
         google={this.props.google}
         zoom={14}

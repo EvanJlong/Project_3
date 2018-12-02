@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import Home from './components/Home/Home'
 import TopNavigation from './components/TopNavigation/TopNavigation';
 
-export default class App extends Component {
+export default class SignUp extends Component {
   render() {
     return (
       <BrowserRouter>
@@ -24,5 +24,3 @@ export default class App extends Component {
     )
   }
 }
-
-

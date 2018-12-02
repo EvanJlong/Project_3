@@ -10,92 +10,6 @@ import {
   getFromStorage,
 } from '../../utils/storage';
 
-// class Login extends Component {
-
-//   constructor() {
-//     super();
-//     this.state = {
-//       username: '',
-//       password: '',
-//       message: ''
-//     };
-//   }
-//   onChange = (e) => {
-//     const state = this.state
-//     state[e.target.name] = e.target.value;
-//     this.setState(state);
-//   }
-
-//   onSignIn() {
-//     // Grab state
-//     const {
-//       signInEmail,
-//       signInPassword,
-//     } = this.state;
-//     this.setState({
-//       isLoading: true,
-//     });
-//     // Post request to backend
-//     fetch('/api/account/signin', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify({
-//         email: signInEmail,
-//         password: signInPassword,
-//       }),
-//     }).then(res => res.json())
-//       .then(json => {
-//         console.log('json', json);
-//         if (json.success) {
-//           setInStorage('crane_it', { token: json.token });
-//           this.setState({
-//             signInError: json.message,
-//             isLoading: false,
-//             signInPassword: '',
-//             loggedInEmail: signInEmail,
-//             signInEmail: '',
-//             token: json.token,
-//           });
-//         } else {
-//           this.setState({
-//             signInError: json.message,
-//             isLoading: false,
-//           });
-//         }
-//       });
-//   }
-
-//   render() {
-//     const { username, password, message } = this.state;
-//     return (
-//       <div class="container">
-//         <form class="form-signin" onSignIn={this.onSignIn}>
-//           {message !== '' &&
-//             <div class="alert alert-warning alert-dismissible" role="alert">
-//               { message }
-//             </div>
-//           }
-//           <h2 class="form-signin-heading">Please sign in</h2>
-//           <label for="inputEmail" class="sr-only">Email address</label>
-//           <input type="email" class="form-control" placeholder="Email address" name="username" value={username} onChange={this.onChange} required/>
-//           <label for="inputPassword" class="sr-only">Password</label>
-//           <input type="password" class="form-control" placeholder="Password" name="password" value={password} onChange={this.onChange} required/>
-//           <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-//           <p>
-//             Not a member? <Link to="/register"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Register here</Link>
-//           </p>
-//         </form>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Login;
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Login extends Component {
 
@@ -319,7 +233,7 @@ class Login extends Component {
     if (!token) {
       return (
 
-              <div class="container">
+              <div id = "loginform" class="container">
               {
               (signInError) ? (
                 <p>{signInError}</p>
@@ -331,15 +245,15 @@ class Login extends Component {
                     { message }
                   </div>
                 } */}
-                <h2 class="form-signin-heading">Please sign in</h2>
+                <h2 class="form-signin-heading">Sign-In</h2>
                 <label for="inputEmail" class="sr-only">Email address</label>
                 <input type="email" class="form-control" placeholder="Email"  value={signInEmail} onChange={this.onTextboxChangeSignInEmail} required/>
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" class="form-control" placeholder="Password" name="password" value={signInPassword} onChange={this.onTextboxChangeSignInPassword} required/>
                 <button class="btn btn-lg btn-primary btn-block" type="submit" onClick={this.onSignIn} >Login</button>
-                {/* <p>
-                  Not a member? <Link to="/register"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Register here</Link>
-                </p> */}
+                <p>
+                  Not a member? <Link to="/register"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Sign Up</Link>
+                </p>
               </form>
             </div>
       );
@@ -347,8 +261,10 @@ class Login extends Component {
     return (
       <div>
         <p>Welcome,  {this.state.loggedInEmail}</p>
-        <button onClick={this.logout}>Logout</button>
+
+        {/* <button class="btn btn-lg btn-primary btn-block" type="submit" onClick={this.logout} >Logout</button> */}
       </div>
+      
     );
   }
 }
