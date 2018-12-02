@@ -1,4 +1,4 @@
-
+/* 
 body {
     display: flex;
     min-height: 100vh;
@@ -7,4 +7,13 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     align-content: center;
+  } */
+
+  body { 
+    background-image: url("../images/architecture-blue-build-162557.jpg");
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999; 
   }

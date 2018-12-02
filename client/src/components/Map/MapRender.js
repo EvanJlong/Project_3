@@ -32,7 +32,7 @@ export class MapContainer extends Component {
 
   render() {
     return (
-      <div class="map">
+      <div id="map">
       <Map
         google={this.props.google}
         zoom={14}
