@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 require('./routes/api/counters')(app);
 require('./routes/api/signin')(app);
-
+require("./routes/api/buildingdata")(app);
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/login_demo_db");
 

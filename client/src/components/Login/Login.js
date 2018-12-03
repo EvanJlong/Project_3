@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
+// import ReactDOM from 'react-dom';
+// import axios from 'axios';
 import 'whatwg-fetch';
 import { Link } from 'react-router-dom';
 import './../Login/Login.css';
-
+import history from '../../history'
 import {
   setInStorage,
   getFromStorage,
@@ -19,7 +19,6 @@ class Login extends Component {
     this.state = {
       isLoading: false,
       token: '',
- 
       signInError: '',
       signInEmail: '',
       loggedInEmail: '',
@@ -265,7 +264,7 @@ class Login extends Component {
       <div>
         <h3>Welcome,  {this.state.loggedInEmail}</h3>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit" onClick={this.logout} >Take me to my Dashboard</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onClick={()=>{history.push({pathname:"/dashboard", state:{user:this.state.loggedInEmail, test:"test"}})}} >Take me to my Dashboard</button>
       </div>
       
     );

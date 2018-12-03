@@ -6,14 +6,13 @@ var ProjectSchema = new Schema({
     building_type: String,
     address: String,
     owner_developer: String,
-    cost: Number,
     percent_completed: Number,
-    estimated_completion : Date,
+    current_bid:Number,
     status: String,
     geo_lat: Number,
     geo_long: Number
 })
 
-const Project = mongoose.model('Project', ProjectSchema);
+const Project = mongoose.model('buildingdata', ProjectSchema);
 
 module.exports = Project;

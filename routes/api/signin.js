@@ -89,6 +89,7 @@ module.exports = (app) => {
     User.find({
       email: email
     }, (err, users) => {
+      console.log(users)
       if (err) {
         console.log('err 2:', err);
         return res.send({
