@@ -3,8 +3,8 @@ import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react'
 import './../Map/Map.css'
 
 const mapStyles = {
-  width: '80%',
-  height: '80%',
+  width: '60%',
+  height: '60%',
   margin: 'auto',
 }
 
@@ -14,6 +14,15 @@ export class MapContainer extends Component {
     activeMarker: {},          //Shows the active marker upon click
     selectedPlace: {}          //Shows the infoWindow to the selected place upon a marker
   };
+
+
+  markerRender() {
+    
+
+  }
+
+
+
 
   onMarkerClick = (props, marker, e) =>
     this.setState({
@@ -30,6 +39,9 @@ export class MapContainer extends Component {
       });
     }
   };
+
+
+
 
   render() {
     return (

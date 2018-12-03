@@ -13,6 +13,6 @@ var ProjectSchema = new Schema({
     geo_long: Number
 })
 
-const Project = mongoose.model('buildingdata', ProjectSchema);
+const building = mongoose.model('building', ProjectSchema);
 
-module.exports = Project;
+module.exports = building;

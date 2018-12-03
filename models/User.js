@@ -21,10 +21,9 @@ const UserSchema = new mongoose.Schema({
   buildingdata: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Project"
+      ref: "building"
     }
   ]
-  
 });
 UserSchema.methods.generateHash = function(password) {
   return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
