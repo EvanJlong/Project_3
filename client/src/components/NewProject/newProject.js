@@ -11,14 +11,12 @@ export default class NewProject extends React.Component{
         console.log(response)
       });
     }
-    
+
     render() {
         return (
         <div>
 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-  New Project
-      </button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">New Project</button>
 
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
