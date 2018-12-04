@@ -10,13 +10,13 @@ export default class Dashboard extends Component {
 
   state = {
     results:[],
-    // newProject:{
-    //   building_type: "",
-    //   address:"",
-    //   owner_developer:"",
-    //   current_bid:0,
-    //   status:"Bid Phase"
-    // }
+    newProject:{
+      building_type: "",
+      address:"",
+      owner_developer:"",
+      current_bid:0,
+      status:"Bid Phase"
+    }
   }
   componentDidMount(){
     console.log(this.props, this.props.location.state.user)
