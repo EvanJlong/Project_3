@@ -1,5 +1,13 @@
 .tablez {
+
+
+}
+
+.bidz {
+    border : solid 5px white;;
+    border-radius: 5px;
     width: 75%;
     margin:auto;
-    margin-bottom: -50px;
+    text-align: center;
+    background-color: white;
 }

@@ -54,10 +54,12 @@ export class MapContainer extends Component {
       >
         <Marker
           onClick={this.onMarkerClick}
-          title={'Changing Colors Garage'}
+          title={`Residential Luxury Bldg.`}
           position={{ lat: 32.7766642, lng: -96.7969879 }}
-          name={'Changing Colors Garage'}
+          name={'9600 Valley Rd.'}
+          price={65000000}
         />
+
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
@@ -66,9 +68,13 @@ export class MapContainer extends Component {
           <input type="checkbox" value="first checkbox" id="cb1" /> <label for="cb1">Interested</label>
 
             <h3>{this.state.selectedPlace.title}</h3>
-            <h4>{this.state.selectedPlace.name}</h4>
-            <h4>Current Status : Under Construction</h4>
+            <h6>{this.state.selectedPlace.name}</h6>
+            <h6>Price : ${this.state.selectedPlace.price}</h6>
+            <h6>Status : Bid Phase</h6>
             <img src="https://cdn3.iconfinder.com/data/icons/construction-7/64/Construction_icon-13-128.png"></img>
+            <form>
+              <input></input>
+            </form>
           </div>
         </InfoWindow>
       </Map>

@@ -5,6 +5,7 @@ import axios from 'axios'
 export default class NewProject extends React.Component{
   state = {
     results:[],
+    
     newProject:{
       building_type: "",
       address:"",
@@ -14,7 +15,9 @@ export default class NewProject extends React.Component{
       geo_lat:"",
       geo_long:"",
     }
+    
   }
+  
 
     handleInputChange = (event) => {
       let newProject = this.state.newProject
@@ -23,6 +26,7 @@ export default class NewProject extends React.Component{
       this.setState({
         newProject:newProject
       })
+      
     }
 
     newProject = (e) => {
@@ -30,7 +34,9 @@ export default class NewProject extends React.Component{
       axios.post(`/api/buildingdata/`, this.state.newProject).then((response)=>{
         console.log(response)
       });
-    }
+      
+      
+    } 
 
     render() {
         return (
@@ -48,7 +54,7 @@ export default class NewProject extends React.Component{
                       </button>
                     </div>
                     <div class="modal-body">
-                    <form >Building Type:<br />
+                    <form >Building Type<br />
                       <input type="text" name="building_type" onChange = {this.handleInputChange} />
                       <br/>
                       Address<br />
@@ -57,12 +63,24 @@ export default class NewProject extends React.Component{
                     Owner / Developer<br />
                   <input type="text" name="owner_developer" onChange = {this.handleInputChange} />
                   <br/><br/>
+                  Current Bid<br />
+                      <input type="text" name="current_bid" onChange = {this.handleInputChange} />
+                      <br/>
+                      Status<br />
+                      <input type="text" name="status" onChange = {this.handleInputChange} />
+                      <br/>
+                      Latitude Coordinate<br />
+                      <input type="text" name="geo_lat" onChange = {this.handleInputChange} />
+                      <br/>
+                      Longitude Coordinate<br />
+                      <input type="text" name="geo_long" onChange = {this.handleInputChange} />
+                      <br/>
                   
                 </form>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <input onClick={this.newProject} type="submit" value="Submit" />
+                      <input onClick={this.newProject} type="submit" value="Submit" data-dismiss="modal" />
                     </div>
                   </div>
                 </div>

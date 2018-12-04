@@ -11,6 +11,7 @@ import './assets/css/home.css'
 // import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react'
 import Dashboard from './pages/Dashboard';
 import history from './history'
+import Header from './components/Header/Header'
 
 
 
@@ -20,10 +21,11 @@ export default class App extends Component {
       <Router history={history}>
       <div>
         <TopNavigation/>
+        <Header />
         <Footer />
-      <Switch>
+        <Switch>
         <Route exact path='/' component={Login} />
-        <Route exact path='/Dashboard' component={Dashboard} />
+        <Route exact path='/dashboard' component={Dashboard} />
       </Switch>
       </div>
       

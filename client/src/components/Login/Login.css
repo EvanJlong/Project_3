@@ -48,3 +48,11 @@
   #loginform {
     width:auto;
   }
+  .welcome {
+    width:20%;
+    background-color: white;
+    border: solid 5px white;
+    border-radius: 5px;
+    align-content: center;
+    margin: auto;
+  }

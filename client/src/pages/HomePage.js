@@ -13,12 +13,9 @@ export default class HomePage extends Component {
     return (
       <BrowserRouter>
         <div>
-
-          {/* <Header /> */}
-          {/* <Home /> */}
           <Login />
           <Footer />
-          {/* <MapContainer /> */}
+
         </div>
       </BrowserRouter>
     )

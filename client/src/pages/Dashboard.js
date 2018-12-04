@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import MapContainer from '../components/Map/MapRender'
 import NewProject from '../components/NewProject/newProject'
+import EditProject from '../components/Edit/Edit'
 // import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import axios from 'axios'
 import AllBuildings from '../components/AllBuildings/AllBuildings';
+import TopNavigation from '../components/TopNavigation/TopNavigation';
 
 
 
@@ -16,8 +18,10 @@ export default class Dashboard extends Component {
       address:"",
       owner_developer:"",
       current_bid:0,
-      status:"Bid Phase"
-    }
+      status:"Bid Phase",
+      loggedInEmail: '',
+    },
+    
   }
 
   componentDidMount(){
@@ -42,18 +46,18 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div>
+
         <NewProject/>
+        <EditProject/>
         <div id="buildingz">
         <AllBuildings />
 
       </div>      
       <div id="modalz"></div>
         <div>
-          {/* <TopNavigation /> */}
+
           <div>
               <MapContainer />
-           <hr/>
-
           </div>
         </div>
         

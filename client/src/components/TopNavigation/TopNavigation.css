@@ -1,23 +1,10 @@
-/* nav {
+nav {
     font-family: 'Merriweather', serif;
-    background-color: black;
+    background-color: lightblue;
+    font-size: 30px;
+
+}
+nav,li {
+  border:solid black 1px
 }
 
-li.modal-trigger.fontWhite {
-  color: white;
-  font-size: 1rem;
-}
-
-li.sidenav-trigger.fontWhite {
-  color: white;
-  font-size: 1rem;
-} */
-
-.nav>li>a {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-  font-size: 15px;
-  font-weight: 100;
-  color:blue;
-}

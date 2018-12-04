@@ -261,7 +261,7 @@ class Login extends Component {
       );
     }
     return (
-      <div>
+      <div class="welcome">
         <h3>Welcome,  {this.state.loggedInEmail}</h3>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" onClick={()=>{history.push({pathname:"/dashboard", state:{user:this.state.loggedInEmail, test:"test"}})}} >Take me to my Dashboard</button>

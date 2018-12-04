@@ -38,6 +38,13 @@ export default class AllBuildings extends React.Component {
       })
     }
 
+    deleteBuilding = id => {
+      console.log(id);
+      axios.delete(`/api/buildingdata/${id}`).then((response)=>{
+          console.log(response)
+      })
+
+  }
       // getAllBuildings = () => {
 
       //   axios.get(`/api/buildingdata/`, ).then((response)=>{
@@ -73,27 +80,31 @@ export default class AllBuildings extends React.Component {
           });
           return (
             <tr>
+          <td key = {"building" + e._id} ><button onClick={(event) =>{ event.preventDefault(); this.deleteBuilding(this.props.building._id)}}   type="button" value= {e._id}>X</button></td>    
+          <td key = {"building" + e._id} ><input type="checkbox" value= {e._id} class="Check1" /></td>    
           <td key = {"building" + e._id} >{e.building_type}</td>
           <td key = {"building" + e._id} >{e.address}</td>
           <td key = {"building" + e._id} >{e.current_bid}</td>
           <td key = {"building" + e._id} >{e.status}</td>
-          <td key = {"building" + e._id} >{e.status}</td>
+          
           </tr>
           )
         })
         return (
-          <div>
-            <br />
+          <div className="bidz">
+            
             <div className="tablez">
-            <h1>My Bid List:</h1>
-            <table class="table-hover table-dark table" >
+            <h1>My Bid List</h1>
+            <table class="table-hover table-light table" >
               <thead>
                 <tr>
+                  <th></th>
+                <th>ID</th>
               <th>Building</th>
               <th>Address</th>
               <th>Current Bid</th>
               <th>Status</th>
-              <th>Result</th>
+
               </tr>
               </thead>
               {items}

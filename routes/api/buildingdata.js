@@ -32,4 +32,25 @@ module.exports = (app) => {
             });
     });
 
+    app.delete('/api/buildingdata/:id', function (req, res) {
+        buildingdata.findOneAndDelete({_id: req.params.id})
+          .then(function (data) {
+            res.json(data);
+          })
+          .catch(function (err) {
+            res.json(err);
+          });
+      });
+
+
+    app.put('/api/buildingdata/:id', function (req, res) {
+      buildingdata.findOneAndUpdate({_id: req.params.id}, req.body)
+        .then(function (data) {
+          res.json(data);
+        })
+        .catch(function (err) {
+          res.json(err);
+        });
+    });
+
 };

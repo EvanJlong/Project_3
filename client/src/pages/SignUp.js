@@ -14,9 +14,7 @@ export default class SignUp extends Component {
         <div>
           <TopNavigation />
           <div>
-
           <Header />
-
           <Footer />
           </div>
         </div>

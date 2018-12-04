@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Nav,  NavItem } from 'react-bootstrap';
+
 import '../TopNavigation/TopNavigation.css'
 import { Link} from 'react-router-dom';
 
@@ -10,10 +10,10 @@ export default class TopNavigation extends React.Component {
       
     return (
       <div>
-          <Nav>
-          <Link to={`/`} >Home</Link>
-          <Link to={`/Dashboard`} >DASHBOARD</Link>
-          </Nav>
+          <nav class = "navbar">
+          <a class="navbar-brand" href="/"><Link to={`/`} >BID & BUILD</Link></a>
+          <a class="navbar-brand" href="/dashboard"><Link to={`/dashboard`} >DASHBOARD</Link></a>
+          </nav>
       </div>
     )
   }
