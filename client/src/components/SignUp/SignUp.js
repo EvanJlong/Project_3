@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
 // import axios from 'axios';
-import Login from '../Login/Login'
+// import Login from '../Login/Login'
 import '../../../../client/src/assets/css/home.css'
+import './../Login/Login.css';
+import { Link } from 'react-router-dom';
+
 
 
 import {
@@ -10,7 +13,7 @@ import {
   getFromStorage,
 } from '../../utils/storage';
 
-class Home extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
 
@@ -226,31 +229,86 @@ class Home extends Component {
     }
     if (!token) {
       return (
-        <div>
-          <br />
-          <br />
-          <div>
-            {
-              (signUpError) ? (
-                <p>{signUpError}</p>
-              ) : (null)
-            }
-            <p>Sign Up</p>
-            <input
-              type="email"
-              placeholder="Email"
-              value={signUpEmail}
-              onChange={this.onTextboxChangeSignUpEmail}
-            /><br />
-            <input
-              type="password"
-              placeholder="Password"
-              value={signUpPassword}
-              onChange={this.onTextboxChangeSignUpPassword}
-            /><br />
-            <button onClick={this.onSignUp}>Sign Up</button>
-          </div>
-        </div>
+
+        <div id = "signupform" class="container">
+        {
+        (signUpError) ? (
+          <p>{signUpError}</p>
+        ) : (null)
+      }
+        <form class="form-signup" onSignUp={this.onSignUp}>
+          {/* {message !== '' &&
+            <div class="alert alert-warning alert-dismissible" role="alert">
+              { message }
+            </div>
+          } */}
+              <h4>
+Sign-Up
+</h4><br/>
+          {/* <h2 class="form-signin-heading"><strong>Sign-In</strong></h2> */}
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input type="email" class="form-control" placeholder="Email"  value={signUpEmail} onChange={this.onTextboxChangeSignUpEmail} required/>
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" class="form-control" placeholder="Password" name="password" value={signUpPassword} onChange={this.onTextboxChangeSignUpPassword} required/>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" onClick={this.onSignUp} >Submit</button>
+
+
+        </form>
+      </div>
+////////////////////////////////////////////////////////////////////
+
+        // <div>
+        //   <br />
+        //   <br />
+        //   <div>
+        //     {
+        //       (signUpError) ? (
+        //         <p>{signUpError}</p>
+        //       ) : (null)
+        //     }
+        //     <p>Sign Up</p>
+        //     <input
+        //       type="email"
+        //       placeholder="Email"
+        //       value={signUpEmail}
+        //       onChange={this.onTextboxChangeSignUpEmail}
+        //     /><br />
+        //     <input
+        //       type="password"
+        //       placeholder="Password"
+        //       value={signUpPassword}
+        //       onChange={this.onTextboxChangeSignUpPassword}
+        //     /><br />
+        //     <button onClick={this.onSignUp}>Sign Up</button>
+        //   </div>
+        // </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       );
     }
     return (
@@ -262,7 +320,7 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default SignUp;
 
 
 

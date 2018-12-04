@@ -9,7 +9,7 @@ import './AllBuildings.css'
 
 
 export default class AllBuildings extends React.Component {
-    state = { buildings: [] };
+    state = { buildings: [], id:"" };
     // buildingz:{
     //     building_type : "",
     //     address : "",
@@ -81,7 +81,7 @@ export default class AllBuildings extends React.Component {
           return (
             <tr>
           <td key = {"building" + e._id} ><button onClick={(event) =>{ event.preventDefault(); this.deleteBuilding(this.props.building._id)}}   type="button" value= {e._id}>X</button></td>    
-          <td key = {"building" + e._id} ><input type="checkbox" value= {e._id} class="Check1" /></td>    
+          <td key = {"building" + e._id} ><input type="checkbox" value= {`this.props.${e._id}`} class="Check1" /></td>    
           <td key = {"building" + e._id} >{e.building_type}</td>
           <td key = {"building" + e._id} >{e.address}</td>
           <td key = {"building" + e._id} >{e.current_bid}</td>

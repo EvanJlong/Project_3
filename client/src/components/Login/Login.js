@@ -9,6 +9,7 @@ import {
   setInStorage,
   getFromStorage,
 } from '../../utils/storage';
+import SignUp from '../SignUp/SignUp'
 
 
 class Login extends Component {
@@ -253,8 +254,9 @@ class Login extends Component {
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" class="form-control" placeholder="Password" name="password" value={signInPassword} onChange={this.onTextboxChangeSignInPassword} required/>
                 <button class="btn btn-lg btn-primary btn-block" type="submit" onClick={this.onSignIn} >Login</button>
+
                 <p>
-                  Not a member? <Link to="/register"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Sign Up</Link>
+                  Not a member? <Link to="/SignUp"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Sign Up</Link>
                 </p>
               </form>
             </div>
@@ -264,7 +266,7 @@ class Login extends Component {
       <div class="welcome">
         <h3>Welcome,  {this.state.loggedInEmail}</h3>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit" onClick={()=>{history.push({pathname:"/dashboard", state:{user:this.state.loggedInEmail, test:"test"}})}} >Take me to my Dashboard</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onClick={()=>{history.push({pathname:"/dashboard", state:{user:this.state.loggedInEmail, test:"test"}})}} >Dashboard</button>
       </div>
       
     );

@@ -12,6 +12,7 @@ import './assets/css/home.css'
 import Dashboard from './pages/Dashboard';
 import history from './history'
 import Header from './components/Header/Header'
+import SignUp from './components/SignUp/SignUp'
 
 
 
@@ -26,6 +27,7 @@ export default class App extends Component {
         <Switch>
         <Route exact path='/' component={Login} />
         <Route exact path='/dashboard' component={Dashboard} />
+        <Route exact path='/SignUp' component={SignUp} />
       </Switch>
       </div>
       
