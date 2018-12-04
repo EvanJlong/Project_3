@@ -45,7 +45,7 @@ export default class Dashboard extends Component {
         <NewProject/>
         <div id="buildingz">
         <AllBuildings />
-        hello
+
       </div>      
       <div id="modalz"></div>
         <div>

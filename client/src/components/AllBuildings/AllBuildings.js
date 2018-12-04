@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './AllBuildings.css'
 // import NewBuildings from '../NewBuilding/NewBuilding'
 // import Card from './Card/Card';
 
@@ -83,18 +84,21 @@ export default class AllBuildings extends React.Component {
         return (
           <div>
             <br />
-
+            <div className="tablez">
             <h1>My Bid List:</h1>
-            <table>
-              <tr>
+            <table class="table-hover table-dark table" >
+              <thead>
+                <tr>
               <th>Building</th>
               <th>Address</th>
               <th>Current Bid</th>
               <th>Status</th>
               <th>Result</th>
               </tr>
+              </thead>
               {items}
             </table>
+            </div>
           </div>
         );
       }
