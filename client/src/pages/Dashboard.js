@@ -21,9 +21,18 @@ export default class Dashboard extends Component {
   componentDidMount(){
     console.log(this.props, this.props.location.state.user)
     this.getUserBuildings();
+    this.getAllBuildings();
   }
+  
   getUserBuildings = () =>{
     axios.get(`/api/buildingdata/${this.props.location.state.user}`).then((response)=>{
+      console.log(response)
+    });
+  }
+
+
+  getAllBuildings = () =>{
+    axios.get(`/api/buildingdata/`).then((response)=>{
       console.log(response)
     });
   }

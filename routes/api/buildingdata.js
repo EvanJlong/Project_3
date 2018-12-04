@@ -21,15 +21,15 @@ module.exports = (app) => {
 
 
       
-          //kudos get route//
-    // app.get('/api/buildings', function (req, res) {
-    //     Kudo.find(req.body)
-    //         .then(function (data) {
-    //             res.json(data);
-    //         })
-    //         .catch(function (err) {
-    //             res.json(err);
-    //         });
-    // });
+          //GET ALL buildings get route//
+    app.get('/api/buildingdata/', function (req, res) {
+        buildingdata.find(req.body)
+            .then(function (data) {
+                res.json(data);
+            })
+            .catch(function (err) {
+                res.json(err);
+            });
+    });
 
 };
