@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import NewBuildings from '../NewBuilding/NewBuilding'
+// import NewBuildings from '../NewBuilding/NewBuilding'
 // import Card from './Card/Card';
 
 
@@ -70,16 +70,31 @@ export default class AllBuildings extends React.Component {
             
             
           });
-          return <li key = {"buildings" + e._id} >{e2}</li>
+          return (
+            <tr>
+          <td key = {"building" + e._id} >{e.building_type}</td>
+          <td key = {"building" + e._id} >{e.address}</td>
+          <td key = {"building" + e._id} >{e.current_bid}</td>
+          <td key = {"building" + e._id} >{e.status}</td>
+          <td key = {"building" + e._id} >{e.status}</td>
+          </tr>
+          )
         })
         return (
           <div>
             <br />
 
             <h1>My Bid List:</h1>
-            <ul>
+            <table>
+              <tr>
+              <th>Building</th>
+              <th>Address</th>
+              <th>Current Bid</th>
+              <th>Status</th>
+              <th>Result</th>
+              </tr>
               {items}
-            </ul>
+            </table>
           </div>
         );
       }
