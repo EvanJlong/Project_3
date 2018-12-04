@@ -9,7 +9,7 @@ import './AllBuildings.css'
 
 
 export default class AllBuildings extends React.Component {
-    state = { buildings: [], id:"" };
+    state = { buildings: [], _id:"" };
     // buildingz:{
     //     building_type : "",
     //     address : "",
@@ -32,10 +32,10 @@ export default class AllBuildings extends React.Component {
           console.log(response)
           this.setState({
             buildings:response.data
-            
           })
-          
       })
+
+
     }
 
     deleteBuilding = id => {
@@ -43,7 +43,7 @@ export default class AllBuildings extends React.Component {
       axios.delete(`/api/buildingdata/${id}`).then((response)=>{
           console.log(response)
       })
-
+    
   }
       // getAllBuildings = () => {
 
@@ -80,12 +80,16 @@ export default class AllBuildings extends React.Component {
           });
           return (
             <tr>
-          <td key = {"building" + e._id} ><button onClick={(event) =>{ event.preventDefault(); this.deleteBuilding(this.props.building._id)}}   type="button" value= {e._id}>X</button></td>    
-          <td key = {"building" + e._id} ><input type="checkbox" value= {`this.props.${e._id}`} class="Check1" /></td>    
+          {/* <td key = {"building" + e._id} ><button value= {e._id} onClick={(event) =>{ event.preventDefault(); this.deleteBuilding(this.props.building._id)}}   type="button" >X</button></td>  */}
+          {/* <td key = {"building" + e._id} ><button onClick={this.deleteBuilding} color="primary" >X</button></td>     */}
+          {/* <td key = {"building" + e._id} ><input type="checkbox" value= {`this.props.${e._id}`} class="Check1" /></td>     */}
           <td key = {"building" + e._id} >{e.building_type}</td>
+          <td key = {"building" + e._id} >{e.owner_developer}</td>
           <td key = {"building" + e._id} >{e.address}</td>
           <td key = {"building" + e._id} >{e.current_bid}</td>
           <td key = {"building" + e._id} >{e.status}</td>
+          <td key = {"building" + e._id} >{e.geo_lat}</td>
+          <td key = {"building" + e._id} >{e.geo_long}</td>
           
           </tr>
           )
@@ -94,16 +98,19 @@ export default class AllBuildings extends React.Component {
           <div className="bidz">
             
             <div className="tablez">
-            <h1>My Bid List</h1>
+            <h1>My Project List</h1>
             <table class="table-hover table-light table" >
               <thead>
                 <tr>
-                  <th></th>
-                <th>ID</th>
+                  {/* <th></th>
+                <th>ID</th> */}
               <th>Building</th>
+              <th>Owner/Developer</th>
               <th>Address</th>
               <th>Current Bid</th>
               <th>Status</th>
+              <th>Coords-(Lat)</th>
+              <th>Coords-(Long)</th>
 
               </tr>
               </thead>

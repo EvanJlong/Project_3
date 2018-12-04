@@ -6,7 +6,7 @@ import EditProject from '../components/Edit/Edit'
 import axios from 'axios'
 import AllBuildings from '../components/AllBuildings/AllBuildings';
 import TopNavigation from '../components/TopNavigation/TopNavigation';
-
+import './Dashboard.css'
 
 
 export default class Dashboard extends Component {
@@ -45,10 +45,10 @@ export default class Dashboard extends Component {
 
   render() {
     return (
-      <div>
+      <div id="div">
 
         <NewProject/>
-        <EditProject/>
+        {/* <EditProject/> */}
         <div id="buildingz">
         <AllBuildings />
 

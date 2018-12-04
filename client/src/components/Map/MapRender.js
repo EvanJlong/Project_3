@@ -72,9 +72,7 @@ export class MapContainer extends Component {
             <h6>Price : ${this.state.selectedPlace.price}</h6>
             <h6>Status : Bid Phase</h6>
             <img src="https://cdn3.iconfinder.com/data/icons/construction-7/64/Construction_icon-13-128.png"></img>
-            <form>
-              <input></input>
-            </form>
+
           </div>
         </InfoWindow>
       </Map>
