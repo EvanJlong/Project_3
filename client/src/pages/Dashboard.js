@@ -23,7 +23,7 @@ export default class Dashboard extends Component {
   componentDidMount(){
     console.log(this.props, this.props.location.state.user)
     this.getUserBuildings();
-    this.getAllBuildings();
+    // this.getAllBuildings();
   }
 
   getUserBuildings = () =>{
@@ -33,18 +33,19 @@ export default class Dashboard extends Component {
   }
 
 
-  getAllBuildings = () =>{
-    axios.get(`/api/buildingdata/`).then((response)=>{
-      console.log(response)
-    });
-  }
+  // getAllBuildings = () =>{
+  //   axios.get(`/api/buildingdata/`).then((response)=>{
+  //     console.log(response)
+  //   });
+  // }
 
   render() {
     return (
       <div>
         <NewProject/>
-        <div id="bidz">
+        <div id="buildingz">
         <AllBuildings />
+        hello
       </div>      
       <div id="modalz"></div>
         <div>
